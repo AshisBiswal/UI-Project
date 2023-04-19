@@ -1,0 +1,160 @@
+let spin;
+let trans;
+let pie;
+let card;
+let heat;
+const db = firebase.firestore();
+db.collection("Transportation").doc("RjjnmTkp2nDJRgqVc2rA").get()
+  .then((doc) => {
+    if (doc.exists){
+      trans = doc.data();
+      console.log(trans);
+    }else{
+      console.log("no such document")
+    }
+  })
+  .catch((error) => {
+    console.log("Error getting document:", error);
+  });
+const fg = firebase.firestore();
+fg.collection("Carding").doc("3bhFRpA9luI1HKu42Ove").get()
+  .then((doc) => {
+    if (doc.exists){
+      card = doc.data();
+      console.log(card);
+    }else{
+      console.log("no such document")
+    }
+  })
+  .catch((error) => {
+    console.log("Error getting document:", error);
+  });
+const sg = firebase.firestore();
+sg.collection("Heating").doc("RjwiJJCzarlkH7ANN1vE").get()
+  .then((doc) => {
+    if (doc.exists){
+      heat = doc.data();
+      console.log(heat);
+    }else{
+      console.log("no such document")
+    }
+  })
+  .catch((error) => {
+    console.log("Error getting document:", error);
+  });
+const tg = firebase.firestore();
+tg.collection("carbon emmision").doc("yHjcxStzPwIJH2w3t3jy").get()
+  .then((doc) => {
+    if (doc.exists){
+      pie = doc.data();
+      console.log(pie);
+    }else{
+      console.log("no such document")
+    }
+  })
+  .catch((error) => {
+    console.log("Error getting document:", error);
+  });
+
+const spg = firebase.firestore();
+// Retrieve document from the "spinning" collection
+spg.collection("spinning").doc("mV8YkRldO53Ow8DO5YdF").get()
+  .then((doc) => {
+    if (doc.exists) {
+      spin = doc.data();
+      console.log(spin)
+    }else {
+        console.log("No such document!");
+      }
+  
+    })
+
+    .catch((error) => {
+      console.log("Error getting document:", error);
+    });
+
+      var ctx = document.getElementById("myChart4").getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["jan","feb","Mar","apr","may","june","july"],
+          datasets: [{
+            label: 'Spinning',
+            backgroundColor: "#57CC78",
+            data: [spin.jan,spin.feb,spin.mar,spin.apr,spin.may,spin.june,spin.july],
+          }, {
+            label: 'Transportation',
+            backgroundColor: "#55DBDB",
+            data: [trans.jan, trans.feb, trans.mar, trans.apr, trans.may,trans.june, trans.july],
+          }, {
+            label: 'Carding',
+            backgroundColor: "#E2FF32",
+            data: [card.jan, card.feb, card.mar, card.apr, card.may,card.june, card.july],
+          }, {
+            label: 'Heating & Cooling',
+            backgroundColor: "#FEC102",
+            data: [5000, 5900, 5300, 5607, 5800, 12000, 5960],
+          }],
+        },
+        options: {
+          tooltips: {
+            displayColors: true,
+            callbacks:{
+              mode: 'x',
+            },
+          },
+          scales: {
+            xAxes: [{
+              stacked: true,
+              gridLines: {
+                display: false,
+              }
+            }],
+            yAxes: [{
+              stacked: true,
+              ticks: {
+                beginAtZero: true,
+              },
+              type: 'linear',
+            }]
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {position:'Top'}
+        }
+      });
+
+
+      const data = {
+        labels: [
+          'Spinning',
+          'Transportation',
+          'Carding',
+          'Heating & Cooling'
+        ],
+        datasets: [{
+          label: 'My First Dataset',
+          data: [pie.Spinning, pie.Transportation, pie.Carding,pie.cooling],
+          backgroundColor: [
+            '#57CC78',
+            '#55DBDB',
+            '#E2FF32',
+            '#FEC102'
+          ],
+          hoverOffset: 4
+        }]
+      };
+
+      var cty = document.getElementById("myChart5").getContext('2d');
+      const con = new Chart(cty, {
+        type: 'doughnut',
+        data: data,
+      });
+      
+    let maxi;
+const eledoc = firebase.firestore().collection("ele").doc("dm9XQhikFXXnhS4e3kde").get();
+Promise.all([eledoc])
+.then((docs) => {
+    p = docs[0].data()
+   
+})

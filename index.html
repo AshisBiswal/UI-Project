@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      // TODO: Replace with your project's customized code snippet
+      var config = {
+        apiKey: "AIzaSyB4oBv275sQwJxwXjnVTBW0NSmvM8_KAPE",
+        authDomain: "ui-project-f24a8.firebaseapp.com",
+        projectId: "ui-project-f24a8",
+        storageBucket: "ui-project-f24a8.appspot.com",
+        messagingSenderId: "327402993087",
+        appId: "1:327402993087:web:d41eb248d03e0b38cb9d0a"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body class="body2">
+    <div class="container">
+    <div class="sidebar">
+        <img src="image1.png" alt="">
+        <p>DASHBOARD</p>
+        <div class="insidebar">
+            <div class="dash">
+            <img src="dashimage.png" alt="" class="dashimage">
+            <span class="st6">Dashboard</span>
+            <img src="dropup.png" alt="" class="dropup">
+
+        </div>
+        <div class="insidebar2">
+            <span>Records</span>
+            <span>Reports</span>
+            <span>analyze</span>
+            <span>Learn</span>
+        </div>
+        </div>
+        <div class="pages">Pages</div>
+        <div class="help">
+            <img src="help.png" alt=""  class="helpimage">
+            <span class="st7">Help Center</span>
+            <img src="dropdown.png" alt="" class="dropdown1">
+        </div>
+        <div class="file">
+            <img src="file.png" alt="" class="fileimage">
+            <span class="st8">File Manager</span>
+            <img src="dropdown.png" alt="" class="dropdown">
+        </div>
+        <div class="lower">
+            <img src="filter.png" alt="">
+            <img src="share.png" alt="">
+            <img src="internet.png" alt="">
+        </div>
+    </div>
+    <div class="navbar">
+        <div id="insidenav">
+            <img src="searchicon.png" alt="" id="search">
+            <input type="text" placeholder="Search...">
+            <span class="indicator"><img src="Indicator.png" alt=""></span>
+            <div class="icons">
+                <img src="bellicon.png" alt="">
+                <img src="calen.png" alt="">
+                <img src="hamburgericon.png" alt="">
+                <img src="gima.png" alt="" id="gima">
+            </div>
+        </div>
+       
+    </div>
+</div>
+    <div class="secondbars">
+        <div class="st"><span>Carbon footprint</span>
+        <p class="t97"></p>
+        <p class="inter">CO2e</p>
+        <p class="inter1">-45%</p>
+        
+        </div>
+        <div class="st"><span>Emission by Spinning</span>
+            <p class="t98"></p>
+            <p class="inter">CO2e</p>
+            <p class="inter2">-60%</p>
+        </div>
+        
+        <div class="st"><span>Emission by Transportation</span>
+           <p class="t96"></p>
+           <p class="inter">CO2e</p>
+           <p class="inter3">0.00</p>
+        </div>
+        
+        <div class="st"><span>Emission by Carding</span>
+           <p class="t99"></p>
+           <p class="inter">CO2e</p>
+           <p class="inter4">0.06%</p>
+        </div>
+       
+    </div>
+    <div class="thirdbars">
+        <div class="st21">
+            <span>Carbon Footprint</span>
+            <div class="wrapper">
+                <canvas id="myChart4" ></canvas>
+                </div>
+        
+        </div>
+        <div class="st22">
+            <span>Top emissions by type</span>
+            <div class="wrapper2">
+                <canvas id="myChart5"></canvas>
+                </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="script.js"></script>
+
+
+
+</html>

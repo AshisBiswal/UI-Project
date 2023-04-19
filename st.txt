@@ -1,0 +1,22 @@
+let spin;
+let trans;
+let card;
+let heat;
+let pie;
+
+// Retrieve data from Firestore collections
+const transportDoc = firebase.firestore().collection("Transportation").doc("RjjnmTkp2nDJRgqVc2rA").get();
+const cardingDoc = firebase.firestore().collection("Carding").doc("3bhFRpA9luI1HKu42Ove").get();
+const heatingDoc = firebase.firestore().collection("Heating").doc("RjwiJJCzarlkH7ANN1vE").get();
+const carbonDoc = firebase.firestore().collection("carbon emmision").doc("yHjcxStzPwIJH2w3t3jy").get();
+const spinningDoc = firebase.firestore().collection("spinning").doc("mV8YkRldO53Ow8DO5YdF").get();
+
+// Wait for all the Firestore requests to complete
+Promise.all([transportDoc, cardingDoc, heatingDoc, carbonDoc, spinningDoc])
+  .then((docs) => {
+    // Save the retrieved data to variables
+    trans = docs[0].data();
+    card = docs[1].data();
+    heat = docs[2].data();
+    pie = docs[3].data();
+    spin = docs[4].data();
